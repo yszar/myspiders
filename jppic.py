@@ -23,13 +23,9 @@ class Jppic():
         print('%02d%%' % (100.0 * count * block_size / total_size))
 
     def __downpic(self, picurls):
-        # picpath = 1
-        # regular = r'.([\s\S]*?)'
         for pic in picurls:
-            # suffix = str(re.findall(regular, pic))
             picpath = os.path.basename(pic)
             urllib.request.urlretrieve(pic, './pic/' + picpath)
-            # picpath += 1
 
     def go(self):
         htmls = self.__gethtmls()
